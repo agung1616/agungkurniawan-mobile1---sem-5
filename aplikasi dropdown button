@@ -1,0 +1,58 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(App10());
+
+class App10 extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Agung kurniawan (5SIA1)')),
+        body: AgungkurniawanApp(),
+      ),
+    );
+  }
+}
+
+class AgungkurniawanApp extends StatefulWidget {
+  _AgungkurniawanAppState createState() => _AgungkurniawanAppState();
+}
+
+class _AgungkurniawanAppState extends State<AgungkurniawanApp> {
+  final txtnama = TextEditingController();
+  String _selected;
+  String hasil;
+
+  onProses() {
+    setState(() {
+      hasil = '${txtnama.text}" memesan $_selected';
+    });
+  }
+
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        TextField(
+            controller: txtnama,
+            decoration: InputDecoration(labelText: 'Nama Pelanggan')),
+        DropdownButton(
+            value: _selected,
+            hint: Text("Pilih Menu"),
+            items: ['Nasi Goreng', 'bakso', 'sate'].map((choice) {
+              return DropdownMenuItem(
+                child: Text(choice),
+                value: choice,
+              );
+            }).toList(),
+            onChanged: (value) {
+              setState(() {
+                _selected = value;
+              });
+            }),
+        RaisedButton(
+          child: Text('PROSES'),
+          onPressed: onProses,
+        ), Text(' Run: $hasil'),
+      ],
+    );
+  }
+}
