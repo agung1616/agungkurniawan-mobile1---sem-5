@@ -1,0 +1,38 @@
+void main (){
+  var student1 = Student();
+  student1.id=2018020480;
+  student1.name="agung kurniawan";
+  print("${student1.id} and ${student1.name}");
+  
+  student1.study();
+  student1.sleep();
+  
+  
+  var student2 = Student();
+  student2.id = 45;
+  student2.name="Sam";
+   print("${student2.id} and ${student2.name}");
+  student2.study();
+  student2.sleep();
+  
+  var student3 = Student();
+  student3.id = 54;
+  student3.name="Rahul";
+   print("${student3.id} and ${student3.name}");
+  student3.study();
+  student3.sleep();
+
+ 
+}
+class Student{
+  int id = -1;
+  String name;
+  
+  void study(){
+    print("${this.name} is now studying");
+  }
+  
+  void sleep(){
+    print("${this.name} is now sleeping");
+  }
+  }
