@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+
+void main() =>  runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+    home: Scaffold(
+      backgroundColor : Colors.deepOrange,
+      appBar : AppBar(
+        backgroundColor: Colors.deepPurple,
+        title: Text('Wellcome To Flutter'), 
+        
+        ),
+        body: Center(
+          child: Column(
+             children: [
+                Text('Nama : Agung kurniawan'),
+                Text('alamat : Jl.Tanjung morawa Km 13.5 desa bangun sari'),
+                Text('email : agungkurniawan12345kurniawan@gmail.com'),
+                Image.network('https://lh3.googleusercontent.com/-iWbSNYFXf0Q/X1m1OyRgY1I/AAAAAAAAABE/jGqfuqcpVTwPc0xGxU_2tSQ8bzkSxGu7wCMICGAYYCw/s83-c/agung.jpg'),
+           
+          ],
+         ),
+        ),
+       ),
+      );
+    }
+}
